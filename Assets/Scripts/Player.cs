@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     public Rigidbody2D rigid;
     public Animator anim;
     public GameMaster gameMaster;
-    public SoundManager soundManager;
 
     public const float MAX_SPEED = 3f;
     public const float MAX_HIGH = 5f;
@@ -26,7 +25,6 @@ public class Player : MonoBehaviour
         rigid = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
-        soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
         currentHealth = MAX_HEALTH;
     }
 
@@ -92,6 +90,7 @@ public class Player : MonoBehaviour
         isFaceRight = !isFaceRight;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
+
     public void Death()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -112,7 +111,6 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Coin"))
         {
-            soundManager.PlaySound("coin");
             Destroy(collision.gameObject);
             gameMaster.Score += 1;
         }
