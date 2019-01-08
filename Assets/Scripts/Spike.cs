@@ -18,7 +18,7 @@ public class Spike : MonoBehaviour
         if (collision.CompareTag("Player") && !collision.isTrigger)
         {
             //if (player.CurrentHealth > 1)       // trick to debug easier
-                player.CurrentHealth -= damage;
+            player.Damaged(damage);
             player.KnockBack(320f, player.transform.position);
         }
     }

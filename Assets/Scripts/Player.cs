@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,14 +10,15 @@ public class Player : MonoBehaviour
     public Animator anim;
     public GameMaster gameMaster;
     public SoundManager soundManager;
+    public Slider healthBar;
 
     public const float MAX_SPEED = 3f;
     public const float MAX_HIGH = 5f;
     public float speed = 50f, jumpPow = 320f;
     public bool isGround = false, isFaceRight = true, canDoubleJump = false;
 
-    private const int MAX_HEALTH = 5;
-    private int currentHealth;
+    private const int MAX_HEALTH = 10;
+    public int currentHealth;
 
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
         soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
         currentHealth = MAX_HEALTH;
+        healthBar.value = CalculateHealth();
     }
 
     // Update is called once per frame
@@ -106,6 +109,15 @@ public class Player : MonoBehaviour
             rigid.AddForce(new Vector2(Mathf.Abs(knockDir.x) * -100, Mathf.Abs(knockDir.y) * knockPow));
         else
             rigid.AddForce(new Vector2(Mathf.Abs(knockDir.x) * 100, Mathf.Abs(knockDir.y) * knockPow));
+    }
+    float CalculateHealth()
+    {
+        return (float) currentHealth / MAX_HEALTH;
+    }
+    public void Damaged(int dam)
+    {
+        currentHealth -= dam;
+        healthBar.value = CalculateHealth();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
