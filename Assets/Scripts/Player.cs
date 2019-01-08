@@ -100,12 +100,23 @@ public class Player : MonoBehaviour
     }
     public void KnockBack(float knockPow, Vector2 knockDir)
     {
+        gameObject.GetComponent<Animation>().Play("Be hitted");
+
         rigid.velocity = new Vector2(0, 0);
 
         if (isFaceRight)
             rigid.AddForce(new Vector2(Mathf.Abs(knockDir.x) * -100, Mathf.Abs(knockDir.y) * knockPow));
         else
             rigid.AddForce(new Vector2(Mathf.Abs(knockDir.x) * 100, Mathf.Abs(knockDir.y) * knockPow));
+    }
+    public void Surf(float power)
+    {
+        rigid.velocity = new Vector2(0, rigid.velocity.y);
+
+        if (isFaceRight)
+            rigid.AddForce(Vector2.right * power);
+        else
+            rigid.AddForce(Vector2.left * power);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
