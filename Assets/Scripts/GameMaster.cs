@@ -12,6 +12,7 @@ public class GameMaster : MonoBehaviour
     public Text scoreText;
     public Text highScoreText;
     public Text nextLevelText;
+    
     public int Score { get => score; set => score = value; }
     public int HighScore { get => highScore; set => highScore = value; }
 

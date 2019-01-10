@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spike : MonoBehaviour
 {
     public Player player;
-    public int damage = 2;
+    public int damage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -15,10 +15,10 @@ public class Spike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !collision.isTrigger)
         {
             //if (player.CurrentHealth > 1)       // trick to debug easier
-                player.CurrentHealth -= damage;
+                player.Damaged(damage);
             player.KnockBack(320f, player.transform.position);
         }
     }

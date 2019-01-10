@@ -20,12 +20,12 @@ public class HeartUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.CurrentHealth > 5)
-            player.CurrentHealth = 5;
+        //if (player.CurrentHealth > 5)
+        //    player.CurrentHealth = 5;
 
-        if (player.CurrentHealth < 0)
-            player.CurrentHealth = 0;
+        //if (player.CurrentHealth < 0)
+        //    player.CurrentHealth = 0;
 
-        imgHeart.sprite = HeartSprites[player.CurrentHealth];
+        imgHeart.sprite = HeartSprites[0];
     }
 }

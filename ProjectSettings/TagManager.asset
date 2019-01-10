@@ -8,6 +8,13 @@ TagManager:
   - Enemy
   - GameMaster
   - Coin
+  - Sound
+  - Music
+  - Platform
+  - MovingPlat
+  - Ground
+  - Mana
+  - Health
   layers:
   - Default
   - TransparentFX
