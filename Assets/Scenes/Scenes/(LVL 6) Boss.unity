@@ -1450,6 +1450,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1122848807337098692, guid: 624acaff4ff02da47bc901c9d57fa529,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3dadac9748a8cc141bfa4bad6d241482, type: 3}
     - target: {fileID: 1968067266012093225, guid: 624acaff4ff02da47bc901c9d57fa529,
         type: 3}
       propertyPath: m_Name
@@ -2752,9 +2757,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c606151966eeaa840aa4c4f8d71e6427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 8300000, guid: 7414cc78b4c86124abeb97f519f40a30, type: 3}
-  sword: {fileID: 8300000, guid: c04d51e66e00e5b47bd55731acddac56, type: 3}
-  crash: {fileID: 8300000, guid: 1620250c12a98fb4aa5b2f370be294c2, type: 3}
+  eat: {fileID: 0}
+  drink: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!82 &1719973484
 AudioSource:

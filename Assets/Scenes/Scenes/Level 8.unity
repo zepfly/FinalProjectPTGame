@@ -578,7 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962194d6f5aeb6c449fe54ea0dbe5cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curHealth: 500
+  health: 100
   distance: 0
   wakerange: 9.400825
   bulletspeed: 3
@@ -1653,9 +1653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c606151966eeaa840aa4c4f8d71e6427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 8300000, guid: 7414cc78b4c86124abeb97f519f40a30, type: 3}
-  sword: {fileID: 8300000, guid: c04d51e66e00e5b47bd55731acddac56, type: 3}
-  crash: {fileID: 8300000, guid: 1620250c12a98fb4aa5b2f370be294c2, type: 3}
+  eat: {fileID: 0}
+  drink: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!82 &707460226
 AudioSource:
@@ -2559,7 +2558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962194d6f5aeb6c449fe54ea0dbe5cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curHealth: 500
+  health: 100
   distance: 0
   wakerange: 9.400825
   bulletspeed: 3
@@ -3262,7 +3261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962194d6f5aeb6c449fe54ea0dbe5cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curHealth: 500
+  health: 100
   distance: 0
   wakerange: 9.400825
   bulletspeed: 3
@@ -3393,7 +3392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962194d6f5aeb6c449fe54ea0dbe5cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curHealth: 500
+  health: 100
   distance: 0
   wakerange: 9.400825
   bulletspeed: 3

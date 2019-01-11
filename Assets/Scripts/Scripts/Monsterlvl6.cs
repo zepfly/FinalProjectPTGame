@@ -5,7 +5,7 @@ using UnityEngine;
 public class Monsterlvl6 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int health = 6;
+    public int health = 200;
     public float speed;
     public float distance;
     public float attackrage;
@@ -40,7 +40,7 @@ public class Monsterlvl6 : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            anim.SetBool("Died", true);
         }
 
         if (target.transform.position.x > transform.position.x && isFaceRight)
@@ -68,5 +68,18 @@ public class Monsterlvl6 : MonoBehaviour
         {
             attack = false;
         }
+    }
+
+    public void Damaged(int dmg)
+    {
+
+        health -= dmg;
+        anim.SetTrigger("Hitted");
+    }
+
+
+    void DestroyGameOject()
+    {
+        Destroy(gameObject);
     }
 }

@@ -84,7 +84,9 @@
     <Compile Include="Assets\Scripts\Scripts\FallingFlat.cs" />
     <Compile Include="Assets\Scripts\Scripts\Monsterlvl6.cs" />
     <Compile Include="Assets\Scripts\Scripts\Monsterlvl7.cs" />
+    <Compile Include="Assets\Scripts\Scripts\MonsterSoundManager.cs" />
     <Compile Include="Assets\Scripts\Scripts\MovingTile.cs" />
+    <Compile Include="Assets\Scripts\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Scripts\ProjectileMonster.cs" />
     <Compile Include="Assets\Scripts\Scripts\RageLVL5monster.cs" />
     <Compile Include="Assets\Scripts\Scripts\TipManager.cs" />
@@ -94,19 +96,19 @@
     <Compile Include="Assets\Scripts\SrollMap.cs" />
     <Compile Include="Assets\Scripts\TutorialController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -310,19 +312,19 @@
       <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/Phat triển game/FinalProjectPTGame - Copy/FinalProjectPTGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>E:/Phat triển game/FinalProjectPTGame/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>E:/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

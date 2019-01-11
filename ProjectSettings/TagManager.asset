@@ -15,6 +15,7 @@ TagManager:
   - Ground
   - Mana
   - Health
+  - Life
   layers:
   - Default
   - TransparentFX

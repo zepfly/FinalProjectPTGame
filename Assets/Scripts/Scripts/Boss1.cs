@@ -35,14 +35,13 @@ public class Boss1 : MonoBehaviour
     public Transform target;
     public Animator anim;
     public Transform shootpointL, shootpointR;
-
-
     // Start is called before the first frame update
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         aura.SetActive(false);
+        
     }
 
     void Awake()
@@ -68,17 +67,20 @@ public class Boss1 : MonoBehaviour
         {
             if (timecount <= moveTimer / 2)
             {
-                transform.position = Vector2.MoveTowards(transform.position, p2.position, speed);
+                transform.position = Vector2.MoveTowards(transform.position, p1.position, speed);
 
             }
             else if (timecount <= moveTimer)
-                transform.position = Vector2.MoveTowards(transform.position, p1.position, speed);
-            else
+                transform.position = Vector2.MoveTowards(transform.position, p2.position, speed);
+            else if (timecount <= moveTimer * 1.5f)
             {
+                transform.position = Vector2.MoveTowards(transform.position, p1.position, speed);
+            }
+            else { 
                 transform.position = Vector2.MoveTowards(transform.position, new Vector3(6.57f, -0.97f, 0), speed);
             }
 
-            if (timecount >= 2 * moveTimer)
+            if (timecount >= 2.3f * moveTimer)
                 timecount = 0;
             if (isshooting)
             {
@@ -103,7 +105,7 @@ public class Boss1 : MonoBehaviour
 
     public void Power()
     {
-        if(!isPowered && health < 10)
+        if(!isPowered && health < 100)
         {
             
             anim.SetBool("Power", true);
@@ -160,10 +162,9 @@ public class Boss1 : MonoBehaviour
 
     }
 
-    public void Damage(int dmg)
+    void Damaged(int dmg)
     {
         health -= dmg;
-        gameObject.GetComponent<Animation>().Play("redflash");
     }
 
     void BulletFlip()

@@ -22,7 +22,7 @@ public class PlayerSkillNormal : MonoBehaviour
     {
         anim = gameObject.GetComponent<Animator>();
 
-        soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
+        soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();// this changed
     }
 
     // Update is called once per frame

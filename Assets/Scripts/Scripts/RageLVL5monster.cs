@@ -20,19 +20,21 @@ public class RageLVL5monster : MonoBehaviour
     public bool died = false;
     public bool lookingRight = true;
     public bool isFaceRight = false;
+    public Rigidbody2D rigid;
 
     public GameObject bullet;
     private Transform target;
     private Animator anim;
     public Transform shootpointL, shootpointR;
 
-
+    private MonsterSoundManager audioSource;
     // Start is called before the first frame update
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        
+        audioSource = GetComponent<MonsterSoundManager>();
+        rigid = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void Awake()
@@ -45,13 +47,12 @@ public class RageLVL5monster : MonoBehaviour
     void Update()
     {
         anim.SetBool("Awake", awake);
-        anim.SetBool("Died", died);
 
         RangeCheck();
 
         if (health < 0)
         {
-            Destroy(gameObject);
+            anim.SetBool("Died", true);
         }
 
         if (isshooting)
@@ -102,9 +103,8 @@ public class RageLVL5monster : MonoBehaviour
         {
             canshoot = true;
             Vector2 direction = target.transform.position - transform.position;
-            direction = new Vector2(direction.x, 0);
-            Vector2 right = new Vector2(1, 0);
-            Vector2 left = new Vector2(-1, 0);
+
+
             direction.Normalize();
 
             if (attackright)
@@ -127,23 +127,39 @@ public class RageLVL5monster : MonoBehaviour
        
     }
 
-    public void Damage(int dmg)
+    public void Damaged(int dmg)
     {
+        audioSource.PlaySound("hurted");
         health -= dmg;
-        gameObject.GetComponent<Animation>().Play("redflash");
+        anim.SetTrigger("Hitted");
     }
 
-    void BulletFlip()
-    {
-        bullet.transform.localScale = new Vector3(bullet.transform.localScale.x * -1, bullet.transform.localScale.y, bullet.transform.localScale.z);
-    }
+
+    //void KnockBack(float knockPow, Vector2 knockDir)
+    //{
+    //    rigid.velocity = new Vector2(0, 0);
+
+    //    if (isFaceRight)
+    //        rigid.AddForce(new Vector2(Mathf.Abs(knockDir.x) * -100, Mathf.Abs(knockDir.y) * knockPow));
+    //    else
+    //        rigid.AddForce(new Vector2(Mathf.Abs(knockDir.x) * 100, Mathf.Abs(knockDir.y) * knockPow));
+    //}
 
     void Flip()
     {
         isFaceRight = !isFaceRight;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-        bullet.transform.localScale = new Vector3(bullet.transform.localScale.x * -1, bullet.transform.localScale.y, bullet.transform.localScale.z);
-
+        
     }
 
+
+    void DeadSound()
+    {
+        audioSource.PlaySound("died");
+    }
+
+    void DestroyGameOject()
+    {
+        Destroy(gameObject);
+    }
 }

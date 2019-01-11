@@ -134,6 +134,8 @@ public class Player : MonoBehaviour
     }
     public void Damaged(int dam)
     {
+
+        soundManager.PlaySound("hurted"); // this changed
         currentHealth -= dam;
         healthBar.value = CalculateHealth();
     }
@@ -167,7 +169,12 @@ public class Player : MonoBehaviour
             manaBar.value = CalculateMana();
             Destroy(collision.gameObject);
         }
-
+        if (collision.CompareTag("Life"))
+        {
+            soundManager.PlaySound("life");
+            // + 1 life
+            Destroy(collision.gameObject);
+        }
         //End
     }
 }

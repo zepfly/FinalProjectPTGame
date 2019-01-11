@@ -12,11 +12,12 @@ public class PlayerGong : MonoBehaviour
     public Animator anim;
     public Player player;
     public GameObject gongMagic;
-
+    private SoundManager soundManager; // This changed
     // Start is called before the first frame update
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        soundManager = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public class PlayerGong : MonoBehaviour
             Vector3 position = new Vector3(player.transform.position.x, player.transform.position.y - 0.5f, player.transform.position.z);
             GameObject gongMagicClone = Instantiate(gongMagic, position, Quaternion.identity) as GameObject;
             Destroy(gongMagicClone, gongDelay);
+            soundManager.PlaySound("huh");
         }
 
         if (isGong)

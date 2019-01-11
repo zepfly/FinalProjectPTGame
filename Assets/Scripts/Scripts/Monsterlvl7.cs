@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Monsterlvl7 : MonoBehaviour
 {
-    public int curHealth = 6;
+    public int health = 100;
     public float speed;
     public float distance;
     public float attackrage;
     public bool isFaceRight = true;
     public bool attack = false;
 
+    public int damage = 10;
     public float timer = 0;
     public float timecounter = 0;
     private Transform target;
@@ -18,10 +19,16 @@ public class Monsterlvl7 : MonoBehaviour
  
     public float changeDirection = -1;
     public float timechangedir;
+    private Player player;
+    public bool hitted = false;
+
+    private MonsterSoundManager audioSource;
+
     private void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        audioSource = GetComponent<MonsterSoundManager>();
     }
     private void Awake()
     {
@@ -35,9 +42,9 @@ public class Monsterlvl7 : MonoBehaviour
     void Update()
     {
         timecounter += Time.deltaTime;
-        anim.SetBool("Attack", attack);
 
-        
+
+
 
         if (!attack)
         {
@@ -61,9 +68,10 @@ public class Monsterlvl7 : MonoBehaviour
 
         
 
-        if (curHealth <= 0)
+        if (health <= 0)
         {
-            Destroy(gameObject);
+
+            anim.SetBool("Died", true);
         }
 
         if (attack && target.transform.position.x > transform.position.x && isFaceRight)
@@ -71,6 +79,10 @@ public class Monsterlvl7 : MonoBehaviour
         if (attack && target.transform.position.x < transform.position.x && !isFaceRight)
             Flip();
 
+    }
+    void FixedUpdate()
+    {
+        anim.SetBool("Damged", false);
 
     }
 
@@ -91,5 +103,33 @@ public class Monsterlvl7 : MonoBehaviour
         {
             attack = false;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && !collision.isTrigger)
+        {
+            //if (player.CurrentHealth > 1)       // trick to debug easier
+            player.Damaged(damage);
+            player.KnockBack(320f, player.transform.position);
+        }
+
+    }
+
+    void Damaged(int dmg)
+    {
+        audioSource.PlaySound("hurted");
+        health -= dmg;
+        anim.SetTrigger("Hitted");
+    }
+
+    void DeadSound()
+    {
+        audioSource.PlaySound("died");
+    }
+
+    void DestroyGameOject()
+    {
+        Destroy(gameObject);
     }
 }

@@ -7,8 +7,8 @@ public class SoundManager : MonoBehaviour
     private AudioClip coin, sword, crash;
 
     //this changed 
-    public AudioClip eat,drink;
-    private AudioClip huh, hah, hey, run;
+    private AudioClip eat,drink,life;
+    private AudioClip huh, hah, hey, run, hurted;
     // End
 
     public AudioSource audioSource;
@@ -27,6 +27,9 @@ public class SoundManager : MonoBehaviour
         hah = Resources.Load<AudioClip>("Hah");
         hey = Resources.Load<AudioClip>("Hey");
         run = Resources.Load<AudioClip>("Run");
+
+        hurted = Resources.Load<AudioClip>("Hurted");
+        life = Resources.Load<AudioClip>("Life");
 
     }
 
@@ -59,20 +62,29 @@ public class SoundManager : MonoBehaviour
                 audioSource.PlayOneShot(drink, 0.5f);
                 break;
             case "huh":
-                audioSource.clip = drink;
+                audioSource.clip = huh;
                 audioSource.PlayOneShot(huh, 0.5f);
                 break;
             case "hah":
-                audioSource.clip = drink;
+                audioSource.clip = hah;
                 audioSource.PlayOneShot(hah, 0.5f);
                 break;
             case "hey":
-                audioSource.clip = drink;
+                audioSource.clip = hey;
                 audioSource.PlayOneShot(hey, 0.5f);
                 break;
             case "run":
-                audioSource.clip = drink;
+                audioSource.clip = run;
                 audioSource.PlayOneShot(run, 0.5f);
+                break;
+            case "life":
+                audioSource.clip = life;
+                audioSource.PlayOneShot(life, 0.5f);
+                break;
+            case "hurted":
+
+                audioSource.clip = hurted;
+                audioSource.PlayOneShot(hurted, 0.5f);
                 break;
             //End
             default:
