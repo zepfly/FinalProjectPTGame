@@ -14,7 +14,7 @@
 ##Update 2:
 
 1. Add new item in Graphics/Graphics/Boss1/Enery
-2. Add new item in Animations/Animations/Boss1 
+2. Add new item in Animations/Animations/Boss1
 3. Add Some sound effect
 
 #Sources
